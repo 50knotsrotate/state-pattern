@@ -1,26 +1,23 @@
-import { State } from './State'
-import { Console } from './Console'
+import { State } from "./State";
+import { Console } from "./Console";
 
 export class ConsoleOnState implements State {
-  console: Console
+  console: Console;
 
   constructor(console: Console) {
-    this.console = console
+    this.console = console;
   }
 
   powerOn() {
-    console.log("The console is already on...")
+    // Do nothing
   }
+  
   powerOff() {
-    console.log("Powering off...")
-    this.console.setState(this.console.getConsoleOffState())
-  }
-  openDiskTray() {
-    console.log("Opening disk tray...")
-    this.console.setState(this.console.getDiskTrayOpenState())
+    console.log("Powering off...");
+    this.console.setState(this.console.getConsoleOffState());
   }
 
-    closeDiskTray() {
-        console.log('Closing disk tray...')
+  isPoweredOn() {
+    return true;
   }
 }

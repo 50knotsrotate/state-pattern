@@ -7,16 +7,19 @@ var ConsoleOffState = /** @class */ (function () {
     }
     ConsoleOffState.prototype.powerOn = function () {
         console.log("Powering on...");
-        this.console.setState(this.console.consoleOnState);
+        this.console.setState(this.console.getConsoleOnState());
     };
     ConsoleOffState.prototype.powerOff = function () {
-        console.log("The console is already off...");
+        // Do nothing
     };
     ConsoleOffState.prototype.openDiskTray = function () {
-        console.log("Cannot open disk tray if console is off...");
+        // Do nothing
     };
     ConsoleOffState.prototype.closeDiskTray = function () {
-        console.log("Cannot close disk tray if console is off...");
+        // Do nothing
+    };
+    ConsoleOffState.prototype.isPoweredOn = function () {
+        return false;
     };
     return ConsoleOffState;
 }());

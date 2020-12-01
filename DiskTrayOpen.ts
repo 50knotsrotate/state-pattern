@@ -1,27 +1,24 @@
-import { State } from "./State"
-import { Console } from "./Console"
+import { DiskTrayState } from "./DiskTrayState";
+import { DiskTray } from './DiskTray';
+import { Console } from "./Console";
 
-export class DiskTrayOpenState implements State {
-  console: Console
+export class DiskTrayOpenState implements DiskTrayState {
+  console: Console;
+  diskTray: DiskTray;
 
-  constructor(console: Console) {
-    this.console = console
+  constructor(console: Console, diskTray : DiskTray) {
+    this.console = console;
+    this.diskTray = diskTray;
   }
 
-  powerOn() {
-    console.log("Power is already on...")
+  open(): void {
+    // Do nothing...
   }
 
-  powerOff(): void {
-    console.log("Please close the disk tray before turning off...")
-  }
-
-  openDiskTray() {
-    console.log("Disk tray is already open...")
-  }
-
-  closeDiskTray() {
-    console.log("Closing disk tray...")
-    this.console.setState(this.console.getDiskTrayClosedState())
+  close(): void {
+    if (this.console.isPoweredOn()) {
+      console.log('Closing disk tray...')
+      this.diskTray.setState(this.diskTray.getDiskTrayClosedState())
+     }
   }
 }

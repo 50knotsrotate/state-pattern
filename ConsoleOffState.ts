@@ -1,5 +1,6 @@
 import { State } from "./State"
 import { Console } from "./Console"
+import { DiskTray } from './DiskTray';
 
 export class ConsoleOffState implements State {
   console: Console
@@ -10,16 +11,20 @@ export class ConsoleOffState implements State {
 
   powerOn() {
     console.log("Powering on...")
-    this.console.setState(this.console.consoleOnState)
+    this.console.setState(this.console.getConsoleOnState())
   }
   powerOff(): void {
-    console.log("The console is already off...")
+   // Do nothing
   }
   openDiskTray() {
-    console.log("Cannot open disk tray if console is off...")
+    // Do nothing
   }
 
   closeDiskTray() {
-    console.log("Cannot close disk tray if console is off...")
+    // Do nothing
+  }
+
+  isPoweredOn() { 
+    return false;
   }
 }

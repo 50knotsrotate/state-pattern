@@ -2,21 +2,18 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DiskTrayOpenState = void 0;
 var DiskTrayOpenState = /** @class */ (function () {
-    function DiskTrayOpenState(console) {
+    function DiskTrayOpenState(console, diskTray) {
         this.console = console;
+        this.diskTray = diskTray;
     }
-    DiskTrayOpenState.prototype.powerOn = function () {
-        console.log("Power is already on...");
+    DiskTrayOpenState.prototype.open = function () {
+        // Do nothing...
     };
-    DiskTrayOpenState.prototype.powerOff = function () {
-        console.log("Please close the disk tray before turning off...");
-    };
-    DiskTrayOpenState.prototype.openDiskTray = function () {
-        console.log("Disk tray is already open...");
-    };
-    DiskTrayOpenState.prototype.closeDiskTray = function () {
-        console.log("Closing disk tray...");
-        this.console.setState(this.console.getDiskTrayClosedState());
+    DiskTrayOpenState.prototype.close = function () {
+        if (this.console.isPoweredOn()) {
+            console.log('Closing disk tray...');
+            this.diskTray.setState(this.diskTray.getDiskTrayClosedState());
+        }
     };
     return DiskTrayOpenState;
 }());
