@@ -18,7 +18,7 @@ export class Console {
     this.consoleState = this.consoleOffState;
   }
 
-  setState(state: State) : void {
+  setState(state: State): void {
     this.consoleState = state;
   }
 

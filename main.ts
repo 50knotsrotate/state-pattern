@@ -1,8 +1,8 @@
-import { Console } from './Console'
+import { Console } from "./Console";
 
-const console: Console = new Console()
+const console: Console = new Console();
 
-console.powerOn()
-console.openDiskTray()
-console.closeDiskTray()
-console.powerOff()
+console.powerOn();
+console.openDiskTray();
+console.closeDiskTray();
+console.powerOff();

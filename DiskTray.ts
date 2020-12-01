@@ -35,4 +35,8 @@ export class DiskTray {
   getDiskTrayClosedState(): DiskTrayState {
     return this.diskTrayClosedState;
   }
+
+  isOpen() {
+    return this.diskTrayState.isOpen();
+  }
 }

@@ -1,21 +1,21 @@
-import { State } from "./State"
-import { Console } from "./Console"
+import { State } from "./State";
+import { Console } from "./Console";
 
 export class ConsoleOffState implements State {
-  console: Console
+  console: Console;
 
   constructor(console: Console) {
-    this.console = console
+    this.console = console;
   }
 
-  powerOn() : void {
-    console.log("Powering on...")
-    this.console.setState(this.console.getConsoleOnState())
+  powerOn(): void {
+    console.log("Powering on...");
+    this.console.setState(this.console.getConsoleOnState());
   }
   powerOff(): void {
-   // Do nothing
+    // Do nothing
   }
-  openDiskTray() : void {
+  openDiskTray(): void {
     // Do nothing
   }
 
@@ -23,7 +23,7 @@ export class ConsoleOffState implements State {
     // Do nothing
   }
 
-  isPoweredOn() : boolean { 
+  isPoweredOn(): boolean {
     return false;
   }
 }

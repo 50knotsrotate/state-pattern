@@ -25,6 +25,9 @@ var DiskTray = /** @class */ (function () {
     DiskTray.prototype.getDiskTrayClosedState = function () {
         return this.diskTrayClosedState;
     };
+    DiskTray.prototype.isOpen = function () {
+        return this.diskTrayState.isOpen();
+    };
     return DiskTray;
 }());
 exports.DiskTray = DiskTray;

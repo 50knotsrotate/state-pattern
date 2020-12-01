@@ -1,4 +1,5 @@
-export interface DiskTrayState { 
-    open: Function;
-    close: Function;
+export interface DiskTrayState {
+  open: Function;
+  close: Function;
+  isOpen: Function;
 }

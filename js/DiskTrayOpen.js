@@ -11,9 +11,12 @@ var DiskTrayOpenState = /** @class */ (function () {
     };
     DiskTrayOpenState.prototype.close = function () {
         if (this.console.isPoweredOn()) {
-            console.log('Closing disk tray...');
+            console.log("Closing disk tray...");
             this.diskTray.setState(this.diskTray.getDiskTrayClosedState());
         }
+    };
+    DiskTrayOpenState.prototype.isOpen = function () {
+        return true;
     };
     return DiskTrayOpenState;
 }());

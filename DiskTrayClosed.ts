@@ -21,4 +21,8 @@ export class DiskTrayClosedState implements DiskTrayState {
   close(): void {
     // Do nothing
   }
+
+  isOpen(): boolean {
+    return false;
+  }
 }

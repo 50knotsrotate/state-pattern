@@ -9,6 +9,8 @@ var ConsoleOnState = /** @class */ (function () {
         // Do nothing
     };
     ConsoleOnState.prototype.powerOff = function () {
+        // The disk tray should close before powering off
+        this.console.closeDiskTray();
         console.log("Powering off...");
         this.console.setState(this.console.getConsoleOffState());
     };

@@ -8,16 +8,19 @@ export class ConsoleOnState implements State {
     this.console = console;
   }
 
-  powerOn() : void {
+  powerOn(): void {
     // Do nothing
   }
-  
-  powerOff() : void {
+
+  powerOff(): void {
+    // The disk tray should close before powering off
+    this.console.closeDiskTray();
+
     console.log("Powering off...");
     this.console.setState(this.console.getConsoleOffState());
   }
 
-  isPoweredOn() : boolean {
+  isPoweredOn(): boolean {
     return true;
   }
 }

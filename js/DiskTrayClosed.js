@@ -15,6 +15,9 @@ var DiskTrayClosedState = /** @class */ (function () {
     DiskTrayClosedState.prototype.close = function () {
         // Do nothing
     };
+    DiskTrayClosedState.prototype.isOpen = function () {
+        return false;
+    };
     return DiskTrayClosedState;
 }());
 exports.DiskTrayClosedState = DiskTrayClosedState;
