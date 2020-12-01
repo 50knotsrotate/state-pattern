@@ -18,7 +18,7 @@ export class Console {
     this.consoleState = this.consoleOffState;
   }
 
-  setState(state: State) {
+  setState(state: State) : void {
     this.consoleState = state;
   }
 
@@ -30,11 +30,11 @@ export class Console {
     this.consoleState.powerOff();
   }
 
-  openDiskTray() {
+  openDiskTray(): void {
     this.diskTray.open();
   }
 
-  closeDiskTray() {
+  closeDiskTray(): void {
     this.diskTray.close();
   }
 
@@ -42,11 +42,11 @@ export class Console {
     return this.consoleOnState;
   }
 
-  getConsoleOffState() {
+  getConsoleOffState(): State {
     return this.consoleOffState;
   }
 
-  isPoweredOn() {
+  isPoweredOn(): boolean {
     return this.consoleState.isPoweredOn();
   }
 }

@@ -8,16 +8,16 @@ export class ConsoleOnState implements State {
     this.console = console;
   }
 
-  powerOn() {
+  powerOn() : void {
     // Do nothing
   }
   
-  powerOff() {
+  powerOff() : void {
     console.log("Powering off...");
     this.console.setState(this.console.getConsoleOffState());
   }
 
-  isPoweredOn() {
+  isPoweredOn() : boolean {
     return true;
   }
 }

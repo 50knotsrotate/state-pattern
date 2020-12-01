@@ -25,7 +25,7 @@ export class DiskTray {
     this.diskTrayState.close();
   }
 
-  setState(diskTrayState: DiskTrayState) {
+  setState(diskTrayState: DiskTrayState): void {
     this.diskTrayState = diskTrayState;
   }
 
